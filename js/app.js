@@ -10,22 +10,25 @@ function convert(event) {
     // console.log(x);
     switch (x) {
         case "1":
-            convertDecToAll(parseInt(numAdded));
+            convertDecToAll(numAdded);
             break;
         case "2":
-            convertHexToAll(parseInt(numAdded));
+            convertHexToAll(numAdded);
             break;
         case "3":
-            convertOcatalToAll(parseInt(numAdded));
+            convertOcatalToAll(numAdded);
             break;
         case "4":
-            convertBinaryToAll(parseInt(numAdded));
+            convertBinaryToAll(numAdded);
             break;
     }
 }
 
 // convert from Dec To All
 function convertDecToAll(num) {
+    //console.log(num);
+    num = parseInt(num, 10)
+    //console.log(num);
     answer = `${"Dec to: " + "Binary: " + num.toString(2) + " Hex: " + num.toString(16) +
         " Octal: " + num.toString(8)}`;
     print(answer);
@@ -60,9 +63,5 @@ function convertBinaryToAll(num) {
 
 // print the answer
 function print(ans) {
-    let pEl = document.createElement('test1');
-    container.appendChild(pEl);
-    pEl.textContent = ans;
-    var brEl = document.createElement('br');
-    container.appendChild(brEl);
+    document.getElementById('test1').innerHTML = ans;
 }
